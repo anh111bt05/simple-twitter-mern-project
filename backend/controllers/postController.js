@@ -5,7 +5,7 @@ exports.getAllPosts = async (req, res, next) => {
   try {
     // populate: noi chua thong tin author (hinh anh, ten ...), -_id loai bo field id
     //select author, name va content
-    const posts = await Post.find({}).populate("author","name").select('content createdAt -_id');
+    const posts = await Post.find({}).populate("author","name").select('content createdAt');
     res.status(200).json({
       status: "success",
       results: posts.length,
