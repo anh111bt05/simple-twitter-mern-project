@@ -8,7 +8,8 @@ import AppContext from "./AppContext";
 export default function PostList() {
   const { state, dispatch } = useContext(AppContext);
   const { posts, user } = state;
-
+  const postList = posts ?  posts : []
+ 
   const getAllPosts = useCallback(async () => {
     try {
       const options = {
@@ -28,7 +29,7 @@ export default function PostList() {
   }, [getAllPosts]);
 
   const newPosts = 
-    posts.map(
+  postList.map(
       (post) => {
         if (user) {
           return post.author.name === user.userName

@@ -20,6 +20,7 @@ textarea.content{
   border-radius: 3px;
 
   resize: none;
+  color: inherit;
 }
 
 .form .btn{
